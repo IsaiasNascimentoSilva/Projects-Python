@@ -10,6 +10,7 @@ class Client:
     def __init__(self,name,id,phone,adress):
         self.nome = name
         self.id = id
+        self.phone = phone
         self.adress = adress
 
 #   Gets e Sets............................................

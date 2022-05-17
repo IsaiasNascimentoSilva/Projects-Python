@@ -1,8 +1,15 @@
 from tkinter.ttk import*
 from tkinter import*
 
+from numpy import record
+from produto import Produto
+
+# Atributos------------------------------------
+products = [Produto]
+
+
 root = Tk()
-root.title('OpenBar')
+root.title('Gerency')
 root.geometry('1400x700')
 
 # Topo
@@ -42,8 +49,34 @@ c_categ['values'] = ('<CATEGORIA>','Suco','Drink','Cerveja','Dose','Petisco','Re
 c_categ.current(0)
 c_categ.grid(row=1,column=0)
 
-# Exibe Produtos
+# frame de Produtos
 f_prod = Frame(root,width=700,height=240,background='#dcdcdc')
 f_prod.grid(row=2,column=0)
+
+# Exibi os Produtos-------------------------------------------
+# Definir as colunas
+col = ('nome','codigo','valor')
+tree = Treeview(f_prod,columns=col,show='headings')
+
+# Define os titulos
+tree.heading('nome',text='Nome')
+tree.heading('codigo',text='Código')
+tree.heading('valor',text='Valor')
+
+# Inserir dados na treeview
+
+# função de evento 
+def selected(event):
+    for item_select in tree.selection():
+        item = tree.item(item_select)
+        record = item['values']
+        
+tree.bind('<<TreeviewSelet>>', selected)
+tree.grid(row=0,column=0,sticky='nsew')
+
+# Add deslizadores auxiliar
+scrollbar = Scrollbar(f_prod,orient=VERTICAL,command=tree.yview)
+tree.configure(yscroll=scrollbar.set)
+scrollbar.grid(row=0,column=1,sticky='ns')
 
 root.mainloop()
