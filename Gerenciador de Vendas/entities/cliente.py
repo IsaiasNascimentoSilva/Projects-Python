@@ -19,9 +19,6 @@ class Client:
         
     def getName(self):
         return self.nome
-    
-    def setId(self,newid):
-        self.id = newid
         
     def getId(self):
         return self.id

@@ -2,7 +2,8 @@ from tkinter.ttk import*
 from tkinter import*
 
 
-def cadast_product():
+class cadast_product():
+    
     Cad_p = Tk()
     Cad_p.title('Cadastro de Produtos')
     Cad_p.geometry('550x640')
@@ -42,8 +43,3 @@ def cadast_product():
     b_cans.place(x=285,y=270)
     
     Cad_p.mainloop()
-
-def cadast_Client():
-    pass
-
-cadast_product()

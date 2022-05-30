@@ -2,13 +2,13 @@
 # Representa um produto.................................
 class Produto:
     nome = ''
-    cod = ''
+    id = ''
     valor = 0.0
     category = ''
     
-    def __init__(self,name,cod,valor,category):
+    def __init__(self,name,id,valor,category):
         self.nome = name
-        self.cod = cod
+        self.id = id
         self.valor = valor
         self.category = category
         
@@ -17,12 +17,9 @@ class Produto:
         
     def getNome(self):
         return self.nome
-
-    def setCod(self,nwcod):
-        self.cod = nwcod
         
-    def getCod(self):
-        return self.cod
+    def getid(self):
+        return self.id
     
     def setValor(self,nwvalor):
         self.valor = nwvalor
