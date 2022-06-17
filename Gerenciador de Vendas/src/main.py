@@ -1,10 +1,6 @@
 from tkinter.ttk import*
 from tkinter import*
-
-from produto import Produto
-
-# Atributos------------------------------------
-products = [Produto]
+from gui.utilitarios.utilyt import*
 
 
 root = Tk()
@@ -12,11 +8,11 @@ root.title('Gerency')
 root.geometry('1400x700')
 
 #------------------------Topo------------------------------
-f_top = Frame(root,width=700,height=60,background='#32cd32')
+f_top = Frame(root,width=700,height=60,background=paleta(6))
 f_top.grid(row=0,column=0)
 
 # Botão Menu
-menuB = Menubutton(f_top,text='Menu',font='Arial 14',background='#32cd32')
+menuB = Menubutton(f_top,text='Menu',font='Arial 14',background=paleta(6))
 menu = Menu(menuB,tearoff=0)
 menus = ('Cadastrar','Deletar','Vendas')
 for vary in menus:
@@ -25,7 +21,7 @@ menuB['menu'] = menu
 menuB.place(x=15,y=10)
 
 # Botão Configuração
-confB = Menubutton(f_top,text='Configuração',font='Arial 14',background='#32cd32')
+confB = Menubutton(f_top,text='Configuração',font='Arial 14',background=paleta(6))
 conf = Menu(confB,tearoff=0)
 menus = ('Conta','Senha','Sair')
 for vary in menus:
@@ -34,7 +30,7 @@ confB['menu'] = conf
 confB.place(x=130,y=10)
 
 # Botão Ajuda
-ajudaB = Menubutton(f_top,text='Ajuda',font='Arial 14',background='#32cd32')
+ajudaB = Menubutton(f_top,text='Ajuda',font='Arial 14',background=paleta(6))
 ajuda = Menu(ajudaB,tearoff=0)
 menus = ('Sobre','Suporte')
 for vary in menus:
@@ -49,7 +45,7 @@ c_categ.current(0)
 c_categ.grid(column=0,row=1)
 
 #-----------------------------------frame de Produtos----------------------------------------
-f_prod = Frame(root,width=700,height=240,background='#dcdcdc')
+f_prod = Frame(root,width=700,height=240,background=paleta(1))
 f_prod.grid(row=2,column=0)
 
 #....................................Exibi os Produtos........................................
@@ -79,7 +75,7 @@ tree.configure(yscroll=scrollbar.set)
 scrollbar.grid(row=0,column=1,sticky='ns')
 
 #--------------------------------frame de clientes------------------------------------------
-f_client = Frame(root,width=700,height=320,bg='#dcdcdc')
+f_client = Frame(root,width=700,height=320,bg=paleta(1))
 f_client.grid(row=3,column=0)
 
 # Botões 
