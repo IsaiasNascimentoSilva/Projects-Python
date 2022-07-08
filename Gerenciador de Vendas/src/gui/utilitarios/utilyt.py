@@ -39,3 +39,31 @@ def connectDB():
         database="dbSystem"
     )
      return db
+
+# Gera o código do produto
+def geraProd(name):
+     result = "55"
+     for i in name.upper():
+          result += str(ord(i))
+     
+     return pattern(result)
+
+# Verifica se é numero
+def isNumber(num:str):
+     lista = '012345679'
+     for i in num:
+          if i != '.':
+               if not i in lista:
+                    return False
+     return True
+
+# Deixa o código do produto no tamanho padrão
+def pattern(cod:str):
+     newCod = ''
+     if len(cod) >= 13:
+          newCod = cod[0:13]
+     else:
+          newCod = cod
+          for cd in range(len(cod),13,1):
+               newCod += '0'
+     return newCod

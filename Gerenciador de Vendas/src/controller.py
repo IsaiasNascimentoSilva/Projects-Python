@@ -1,4 +1,17 @@
+from gui.cadProduct import CadastProduct
+
 '''
-    *Responsável por controlar todo sistema, lidar com banco de dados e entidades
     *@uthor: Isaías Silva
+    *date: 
+    *Responsável por gerenciar todo sistema
+    *
 '''
+
+#-------------------------Cadastrar Produto-------------------------------#
+# *chama window cadastro
+
+def winCad():
+    cad = CadastProduct()
+    cad.mainloop()
+    
+winCad()

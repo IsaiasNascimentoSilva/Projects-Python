@@ -59,7 +59,9 @@ tree.heading('codigo',text='Código')
 tree.heading('valor',text='Valor')
 
 # Inserir dados na treeview
-
+data = [('AÇUCAR','22222222',2.60)]
+for dt in data:
+    tree.insert('',END,values=dt)
 # função de evento 
 def selected(event):
     for item_select in tree.selection():

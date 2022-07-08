@@ -1,17 +1,16 @@
 
 # Representa um produto.................................
-from asyncio.windows_events import NULL
-from tkinter import NO
+from numpy import double
 
 
 class Produto:
-    nome = ''
-    id = None
-    valor = 0.0
-    category = ''
+    nome : str
+    id : str
+    valor : double
+    category : str
     
     def __init__(self,id,name,valor,category):
-        self.nome = name
+        self.nome = name.upper()
         self.id = id
         self.valor = valor
         self.category = category
