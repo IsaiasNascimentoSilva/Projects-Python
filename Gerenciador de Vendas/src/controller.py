@@ -14,4 +14,3 @@ def winCad():
     cad = CadastProduct()
     cad.mainloop()
     
-winCad()

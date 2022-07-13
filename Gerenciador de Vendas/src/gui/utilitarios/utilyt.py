@@ -19,15 +19,15 @@ def paleta(indice):
     return cores[indice]
     
  # 
-def verifiq(cedenc1,credenc2):
-     pass
+def verifiq(credenc1:str,credenc2:str,credenc3:str,credenc4:str):
+     return equals(credenc1,credenc2) and equals(credenc3,credenc4)
     
 # Gera hash code...........................................
 def hashCode(str):
      return hash(str)
     
 # Verifica se duas string são iguais
-def equals(str1,str2):
+def equals(str1:str,str2:str):
      return str1 == str2
     
 # Conecta banco de dados

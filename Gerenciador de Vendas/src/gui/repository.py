@@ -158,7 +158,23 @@ class Repository():
         comand = "SELECT * FROM Registros WHERE Conta = %s"%(conta)
         mycursor.execute(comand)
         result = mycursor.fetchall()
-        return result    
+        mycursor.close()
+        db.close()
+        return result   
+    
+    # Checar credencias
+    def checkout(self,user:str,password:str):
+        db = connectDB()
+        mycursor = db.cursor()
+        cmd = "SELECT Usuário FROM Administrador WHERE Status = 'ATIVO'"
+        mycursor.execute(cmd)
+        user1 = mycursor.fetchone()
+        cmd = "SELECT Senha FROM Administrador WHERE Status = 'ATIVO'"
+        mycursor.execute(cmd)
+        password1 = mycursor.fetchone()
+        mycursor.close()
+        db.close()
+        return verifiq(user,user1[0],password,password1[0])
         
 # --------------------------Auxiliares----------------------
 # Verifica se o dado já está registrado no db
